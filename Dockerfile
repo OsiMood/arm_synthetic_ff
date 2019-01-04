@@ -35,7 +35,7 @@ RUN echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" 
 	echo "deb http://ports.ubuntu.com/ bionic main restricted universe multiverse" | tee --append /etc/apt/sources.list && \
 	echo "deb http://ports.ubuntu.com/ bionic-security main restricted universe multiverse" | tee --append /etc/apt/sources.list && \
 	echo "deb http://ports.ubuntu.com/ bionic-updates main restricted universe multiverse" | tee --append /etc/apt/sources.list && \
-	echo "deb http://ports.ubuntu.com/ bionic-backports main restricted universe multiver$" | tee --append /etc/apt/sources.list && \
+	echo "deb http://ports.ubuntu.com/ bionic-backports main restricted universe multiverse" | tee --append /etc/apt/sources.list && \
 	apt-key adv --no-tty --keyserver keyserver.ubuntu.com --recv-keys EF0F382A1A7B6500 && \
 	apt-key adv --no-tty --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 
