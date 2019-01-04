@@ -7,17 +7,21 @@ FROM arm32v7/debian:stable-slim
 # Maintainer Information & Project description
 #==============================================
 LABEL	maintainer="osimood@gmail.com" \
-		description="Docker container for Selenium Testing with Firefox"
+			description="Docker container for Selenium Testing with Firefox"
 
 #====================================================
 # Create a selenium folder where the scripts will be
 #====================================================
-RUN mkdir -p ./selenium
+ENV SELENIUM_DIR /selenium
+RUN mkdir -p $SELENIUM_DIR
 
+#============================================================
+# Updating and installing the apps necessary for this script
+#============================================================
 RUN apt-get update && \
-	apt-get install -y gnupg2 \
-		curl \
-		wget
+	  apt-get install -y gnupg2 \
+			curl \
+			wget
 
 #===============================================================
 # Adding repositories in order to install all dependencies apps
@@ -89,4 +93,4 @@ RUN apt-get remove -y unzip \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-WORKDIR ./selenium
+WORKDIR $SELENIUM_DIR
